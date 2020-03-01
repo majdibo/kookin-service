@@ -3,18 +3,25 @@ server:
 
 spring:
   application:
-    name: kookin-service
+    name: @project.artifactId@
   datasource:
     url: jdbc:mysql://${DB_HOST:localhost}:3306/${DB_NAME}
     username: ${DB_USER}
     password: ${DB_PASSWORD}
 
   jpa:
-    show-sql: true
     hibernate:
       ddl-auto: validate
     properties:
       hibernate:
         dialect : org.hibernate.dialect.MySQL8Dialect
 
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+info:
+  groupe-id: @project.groupId@
+  application-name: @project.artifactId@
+  version: @project.version@
