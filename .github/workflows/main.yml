@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - ${{ secrets.BRANCHE_TO_DEPLOY }}
+      - master
 
 
 jobs:
